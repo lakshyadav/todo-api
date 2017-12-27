@@ -1,3 +1,5 @@
+const {ObjectID} = require('mongoose');
+
 const mongoose = require('./../server/db/mongoose');
 const {Todo} = require('./../server/models/todo');
 
@@ -20,4 +22,4 @@ Todo.findById(id).then((todo) => {
 		return console.log('ID not found');
 	}
 	console.log('Todo by ID', todo);
-})
+}).catch((e) => console.log(e));
